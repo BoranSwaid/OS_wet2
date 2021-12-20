@@ -56,7 +56,7 @@ asmlinkage long sys_get_heaviest_ancestor(void) {
 	long maxW = 0;
 	long maxPID = 1;
 	struct task_struct* parentT = current;
-	while(parentT->parent != 1){
+	while(parentT-> pid != 1){
 		if(parentT->weight > maxW){
 			maxW = parentT->weight;
 			maxPID = parentT->pid;
